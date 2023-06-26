@@ -87,3 +87,24 @@ Follow these steps to get your pipeline up and running:
     
     Contact
     If you have any questions or issues, feel free to open an issue in this repository.
+
+# add required values, then rename this file to .env
+# mv env.txt .env
+
+# API Keys
+OPENAI_API_KEY=<your_value_here>
+ANTHROPIC_API_KEY=<your_value_here>
+
+# Demo 1: Amazon RDS Connection 
+RDS_ENDPOINT=<your_value_here>
+RDS_PORT=<your_value_here>
+RDS_USERNAME=<your_value_here>
+RDS_PASSWORD=<your_value_here>
+RDS_DB_NAME=<your_value_here>
+
+# Demo 2: Amazon Redshift Connection 
+REDSHIFT_HOST=<your_value_here>
+REDSHIFT_PORT=<your_value_here>
+REDSHIFT_USERNAME=<your_value_here>
+REDSHIFT_PASSWORD=<your_value_here>
+REDSHIFT_DATABASE=<your_value_here>
