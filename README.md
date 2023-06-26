@@ -66,30 +66,20 @@ Follow these steps to get your pipeline up and running:
  1. Clone this repository:
 
     git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
-    
-    Navigate to the modern-data-pipeline directory:
+
     cd modern-data-pipeline
-    
-    Navigate to the terraform directory:
-    cd terraform
-    
-    Run the build script:
+
     . /build.sh
-    
+
     Run the Terraform scripts:
     terraform init
     terraform plan
     terraform apply
-    
-    Navigate back to the root directory:
-    cd ..
-    
-    Navigate to the orchestration directory:
+
     cd orchestration
-    
-    Start the Mage AI project:
+
     mage start demo_project
-    
+
     Important Note
     Please remember to destroy your Terraform environment when you're done to avoid unnecessary AWS charges:
     
@@ -97,4 +87,3 @@ Follow these steps to get your pipeline up and running:
     
     Contact
     If you have any questions or issues, feel free to open an issue in this repository.
-    
