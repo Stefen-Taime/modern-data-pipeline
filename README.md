@@ -46,3 +46,55 @@ The final step in our pipeline is data visualization. For this, we use Dash, a P
 In conclusion, creating a modern data pipeline might seem like a daunting task, but with the right tools and a clear roadmap, it becomes a manageable and even enjoyable process. The combination of Terraform, AWS Lambda and S3, Snowflake, DBT, Mage AI, and Dash provides a robust and flexible pipeline that can handle large volumes of data and deliver valuable insights.
 
 [Github](https://github.com/Stefen-Taime/modern-data-pipeline)
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+* You have installed and configured the AWS CLI. If not, you can follow the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html).
+
+* You have installed Terraform. If not, you can follow the instructions [here](https://learn.hashicorp.com/tutorials/terraform/install-cli).
+
+* You have created a free account on Snowflake. You can sign up [here](https://signup.snowflake.com/).
+
+* You have installed Mage AI. Installation instructions can be found [here](https://github.com/mage-ai/mage-ai).
+
+## Cloning and Running the Pipeline
+
+Follow these steps to get your pipeline up and running:
+
+ 1. Clone this repository:
+
+    git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
+    
+    Navigate to the modern-data-pipeline directory:
+    cd modern-data-pipeline
+    
+    Navigate to the terraform directory:
+    cd terraform
+    
+    Run the build script:
+    . /build.sh
+    
+    Run the Terraform scripts:
+    terraform init
+    terraform plan
+    terraform apply
+    
+    Navigate back to the root directory:
+    cd ..
+    
+    Navigate to the orchestration directory:
+    cd orchestration
+    
+    Start the Mage AI project:
+    mage start demo_project
+    
+    Important Note
+    Please remember to destroy your Terraform environment when you're done to avoid unnecessary AWS charges:
+    
+    terraform destroy
+    
+    Contact
+    If you have any questions or issues, feel free to open an issue in this repository.
+    
