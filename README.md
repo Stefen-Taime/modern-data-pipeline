@@ -63,27 +63,32 @@ Before you begin, ensure you have met the following requirements:
 
 Follow these steps to get your pipeline up and running:
 
- 1. Clone this repository:
+ 1. # Setup Kafka Connect Elastic Sink
+```
+git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
+```
 
-    git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
-
-    cd modern-data-pipeline
-
+2. #  cd modern-data-pipeline
+   ```
     . /build.sh
-
-    Run the Terraform scripts:
+   ```
+3. #  Run the Terraform script
+    ```
     terraform init
     terraform plan
     terraform apply
+   ```
 
-    cd orchestration
-
+4.  #  cd orchestration 
+```
     mage start demo_project
+```
 
     Important Note
     Please remember to destroy your Terraform environment when you're done to avoid unnecessary AWS charges:
-    
+    ```
     terraform destroy
+    ```
     
     Contact
     If you have any questions or issues, feel free to open an issue in this repository.
