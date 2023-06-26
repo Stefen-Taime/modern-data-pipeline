@@ -85,10 +85,11 @@ git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
 ```
 
     Important Note
-    Please remember to destroy your Terraform environment when you're done to avoid unnecessary AWS charges:
-    ```
+    Please remember to destroy your Terraform environment when you're done to avoid unnecessary AWS charges
+    
+```
     terraform destroy
-    ```
+```
     
     Contact
     If you have any questions or issues, feel free to open an issue in this repository.
