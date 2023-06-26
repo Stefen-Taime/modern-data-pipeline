@@ -63,7 +63,7 @@ Before you begin, ensure you have met the following requirements:
 
 Follow these steps to get your pipeline up and running:
 
- 1. ### Setup Kafka Connect Elastic Sink
+ 1. ### Clone github repos
 ```
 git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
 ```
