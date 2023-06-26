@@ -87,12 +87,3 @@ Follow these steps to get your pipeline up and running:
     
     Contact
     If you have any questions or issues, feel free to open an issue in this repository.
-
-
-
-# Demo 2: Amazon Redshift Connection 
-REDSHIFT_HOST=<your_value_here>
-REDSHIFT_PORT=<your_value_here>
-REDSHIFT_USERNAME=<your_value_here>
-REDSHIFT_PASSWORD=<your_value_here>
-REDSHIFT_DATABASE=<your_value_here>
