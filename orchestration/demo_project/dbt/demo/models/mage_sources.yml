@@ -1,0 +1,6 @@
+sources:
+- name: mage_demo
+  tables:
+  - name: example_pipeline_load_titanic
+  - name: example_pipeline_from_s3_to_snowflake_py
+version: 2

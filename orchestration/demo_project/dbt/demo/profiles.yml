@@ -1,0 +1,13 @@
+demo:
+  outputs:
+    dev:
+      account: 
+      database: STAGING
+      password: 
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 4
+      type: snowflake
+      user: 
+      warehouse: COMPUTE_WH
+  target: dev

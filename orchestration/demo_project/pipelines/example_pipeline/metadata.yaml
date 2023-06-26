@@ -1,0 +1,339 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_customers.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_geolocation
+  - demo/models/intermediate/customers_geolocation
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_customers
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - from_s3_to_snowflake_py
+  uuid: demo/models/staging/olist_customers
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_geolocation.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_orders
+  - demo/models/intermediate/customers_geolocation
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_geolocation
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_customers
+  uuid: demo/models/staging/olist_geolocation
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_orders.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_order_items
+  - demo/models/intermediate/orders_details
+  - demo/models/intermediate/order_reviews
+  - demo/models/intermediate/order_payments
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_orders
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_geolocation
+  uuid: demo/models/staging/olist_orders
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_order_items.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_order_payments
+  - demo/models/intermediate/orders_details
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_order_items
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_orders
+  uuid: demo/models/staging/olist_order_items
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_order_payments.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_order_reviews
+  - demo/models/intermediate/order_payments
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_order_payments
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_order_items
+  uuid: demo/models/staging/olist_order_payments
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_order_reviews.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_products
+  - demo/models/intermediate/order_reviews
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_order_reviews
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_order_payments
+  uuid: demo/models/staging/olist_order_reviews
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_products.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/staging/olist_sellers
+  - demo/models/intermediate/orders_details
+  - demo/models/marts/product_performance
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_products
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_order_reviews
+  uuid: demo/models/staging/olist_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/staging/olist_sellers.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/intermediate/customers_geolocation
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/staging/olist_sellers
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_products
+  uuid: demo/models/staging/olist_sellers
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/intermediate/customers_geolocation.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/intermediate/orders_details
+  - demo/models/marts/geographical_performance
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/intermediate/customers_geolocation
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_customers
+  - demo/models/staging/olist_geolocation
+  - demo/models/staging/olist_sellers
+  uuid: demo/models/intermediate/customers_geolocation
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/intermediate/orders_details.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/intermediate/order_reviews
+  - demo/models/marts/product_performance
+  - demo/models/marts/geographical_performance
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/intermediate/orders_details
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/intermediate/customers_geolocation
+  - demo/models/staging/olist_orders
+  - demo/models/staging/olist_order_items
+  - demo/models/staging/olist_products
+  uuid: demo/models/intermediate/orders_details
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/intermediate/order_reviews.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/intermediate/order_payments
+  - demo/models/marts/product_performance
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/intermediate/order_reviews
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_order_reviews
+  - demo/models/staging/olist_orders
+  - demo/models/intermediate/orders_details
+  uuid: demo/models/intermediate/order_reviews
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/intermediate/order_payments.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/marts/product_performance
+  - demo/models/marts/geographical_performance
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/intermediate/order_payments
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/staging/olist_order_payments
+  - demo/models/staging/olist_orders
+  - demo/models/intermediate/order_reviews
+  uuid: demo/models/intermediate/order_payments
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/marts/product_performance.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/marts/geographical_performance
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/marts/product_performance
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/intermediate/order_reviews
+  - demo/models/staging/olist_products
+  - demo/models/intermediate/orders_details
+  - demo/models/intermediate/order_payments
+  uuid: demo/models/marts/product_performance
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/marts/geographical_performance.sql
+    limit: 1000
+  downstream_blocks:
+  - demo/models/marts/customer_behavior
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/marts/geographical_performance
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/marts/product_performance
+  - demo/models/intermediate/orders_details
+  - demo/models/intermediate/customers_geolocation
+  - demo/models/intermediate/order_payments
+  uuid: demo/models/marts/geographical_performance
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: demo/models/marts/customer_behavior.sql
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: demo/models/marts/customer_behavior
+  retry_config: null
+  status: executed
+  type: dbt
+  upstream_blocks:
+  - demo/models/intermediate/customers_geolocation
+  - demo/models/intermediate/orders_details
+  - demo/models/intermediate/order_payments
+  - demo/models/staging/olist_customers
+  - demo/models/intermediate/order_reviews
+  - demo/models/marts/geographical_performance
+  uuid: demo/models/marts/customer_behavior
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - demo/models/staging/olist_customers
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: from_s3_to_snowflake.py
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: from_s3_to_snowflake_py
+callbacks: []
+conditionals: []
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: example_pipeline
+spark_config: {}
+type: python
+updated_at: '2023-06-25 23:23:01'
+uuid: example_pipeline
+widgets: []

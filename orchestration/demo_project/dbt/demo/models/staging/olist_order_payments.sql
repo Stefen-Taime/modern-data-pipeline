@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('STAGING', 'olist_order_payments_dataset') }}
