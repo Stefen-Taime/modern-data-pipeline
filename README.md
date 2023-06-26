@@ -59,27 +59,27 @@ Before you begin, ensure you have met the following requirements:
 
 * You have installed Mage AI. Installation instructions can be found [here](https://github.com/mage-ai/mage-ai).
 
-## Cloning and Running the Pipeline
+### Cloning and Running the Pipeline
 
 Follow these steps to get your pipeline up and running:
 
- 1. # Setup Kafka Connect Elastic Sink
+ 1. ### Setup Kafka Connect Elastic Sink
 ```
 git clone https://github.com/Stefen-Taime/modern-data-pipeline.git
 ```
 
-2. #  cd modern-data-pipeline
+2. ###  cd modern-data-pipeline
    ```
     . /build.sh
    ```
-3. #  Run the Terraform script
+3. ###  Run the Terraform script
     ```
     terraform init
     terraform plan
     terraform apply
    ```
 
-4.  #  cd orchestration 
+4.  ###  cd orchestration 
 ```
     mage start demo_project
 ```
